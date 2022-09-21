@@ -1,1 +1,116 @@
-/*# sourceMappingURL=style.css.map */
+@charset "UTF-8";
+/* Importar */ /* Variables */
+/* Carrusel */
+/* Nav */
+/* Color texto */
+/* Tamaño imagenes index */
+/* Variables */
+* {
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  background-image: url(https://media.istockphoto.com/photos/abstract-hexagon-background-picture-id924793826?b=1&k=20&m=924793826&s=170667a&w=0&h=HlLuNqq7biIOklJwYQ6eefNMPrg5laaAcsvZf22y79M=);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Header */
+/* Carrusel y Nav */
+header div img {
+  width: 100%;
+  height: 55vh;
+}
+header nav div a, header nav div .nav-link {
+  color: white;
+  font-weight: bolder;
+}
+header nav div a:hover, header nav div .nav-link:hover {
+  text-decoration: underline;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.bi {
+  color: white;
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+
+h1, p, main {
+  padding: 1%;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: bolder;
+  color: black;
+}
+
+/* Titulo y texto */
+header p {
+  font-size: 1.2rem;
+  color: black;
+  text-align: justify;
+}
+
+/* Imagenes */
+.img__play, .img__xbox {
+  width: 70%;
+  margin: 4%;
+  border-radius: 3%;
+}
+
+/* Footer */
+.footer__index-p {
+  color: white;
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(33, 37, 41);
+}
+
+footer a, footer p {
+  padding-top: 2%;
+}
+
+/* Xbox */
+/* Play */
+/* Nosotros */
+.h1__nosotros {
+  margin-bottom: 0;
+}
+
+.p-nosotros {
+  text-align: justify;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.img__nosotros {
+  width: 100%;
+  height: 55vh;
+}
+
+/* Contacto */
+.img__contacto {
+  display: none;
+}
+
+.container {
+  width: 70%;
+}
+
+.form-group, .form-control {
+  margin: 2%;
+}/*# sourceMappingURL=style.css.map */

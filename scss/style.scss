@@ -1,0 +1,135 @@
+/* Importar */
+@import "variables";
+
+/* Variables */
+$border-radius:3%;
+$margin:4%;
+
+* {
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  body{
+    font-size: 16px;
+    background-image: url(https://media.istockphoto.com/photos/abstract-hexagon-background-picture-id924793826?b=1&k=20&m=924793826&s=170667a&w=0&h=HlLuNqq7biIOklJwYQ6eefNMPrg5laaAcsvZf22y79M=);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  /* Header */
+
+  /* Carrusel y Nav */
+
+  header{
+    div{
+        img{
+            width: $medida_width-carrusel;
+            height: $medida_height-carrusel;
+        }
+    }
+    
+    nav{
+        div{
+            a,.nav-link{
+                color: $color_nav;
+                font-weight: bolder;
+                                                
+                &:hover{
+                    text-decoration: underline;
+                    font-size: 1.5*$tamano_fuente;
+                    color: $color_nav;
+                }
+                
+            }
+        }
+    }
+  }
+
+  .bi{
+    color: white;
+    font-weight: bolder;
+    font-size: 1.5*$tamano_fuente;
+  }
+
+  h1,p,main{
+    padding: 1%;
+  }
+
+  header h1{
+    font-size: 2*$tamano_fuente;
+    font-weight: bolder;
+    color: $color_texto;
+}
+/* Titulo y texto */
+
+header p{
+    font-size: 1.2*$tamano_fuente;
+    color: $color_texto;
+    text-align: justify;
+}
+
+/* Imagenes */
+
+.img__play,.img__xbox{
+  width: $width_index-imgs;
+  margin: $margin;
+  border-radius: $border-radius;
+
+}
+/* Footer */
+
+.footer__index-p{
+  color: $color_nav;
+  font-weight: bolder;
+  font-size: 1.2*$tamano_fuente;
+}
+
+footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color:rgb(33, 37, 41);
+}
+
+footer{
+  a,p{
+    padding-top: 2%;
+  }
+}
+
+/* Xbox */
+
+/* Play */
+
+/* Nosotros */
+.h1__nosotros{
+  margin-bottom: 0;
+}
+.p-nosotros{
+  text-align: justify;
+  font-size: $tamano_fuente*1.2;
+  font-weight: 600;
+  margin: 0;
+}
+
+.img__nosotros{
+  width: $medida_width-carrusel;
+  height: $medida_height-carrusel;
+}
+
+/* Contacto */
+.img__contacto{
+  display: none;
+}
+
+.container{
+  width: 70%;
+}
+
+.form-group,.form-control{
+  margin: 2%;
+}
+  
