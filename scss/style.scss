@@ -54,21 +54,25 @@ $margin:4%;
     font-size: 1.5*$tamano_fuente;
   }
 
-  h1,p,main{
-    padding: 1%;
-  }
+ /* Titulo y texto */
 
-  header h1{
-    font-size: 2*$tamano_fuente;
-    font-weight: bolder;
-    color: $color_texto;
+ h1,p,main{
+  padding: 0% 1% 0% 1%;
 }
-/* Titulo y texto */
+
+header h1{
+  font-size: 2*$tamano_fuente;
+  font-weight: bolder;
+  color: $color_texto;
+  margin-top: 2%;
+
+}
 
 header p{
     font-size: 1.2*$tamano_fuente;
     color: $color_texto;
     text-align: justify;
+    margin-bottom: 0;
 }
 
 /* Imagenes */

@@ -41,21 +41,23 @@ header nav div a:hover, header nav div .nav-link:hover {
   font-size: 1.5rem;
 }
 
+/* Titulo y texto */
 h1, p, main {
-  padding: 1%;
+  padding: 0% 1% 0% 1%;
 }
 
 header h1 {
   font-size: 2rem;
   font-weight: bolder;
   color: black;
+  margin-top: 2%;
 }
 
-/* Titulo y texto */
 header p {
   font-size: 1.2rem;
   color: black;
   text-align: justify;
+  margin-bottom: 0;
 }
 
 /* Imagenes */
