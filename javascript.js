@@ -8,7 +8,7 @@ const last2=50;
 const shadow=20;
 
 alert("Bienvenido a Dr Game");
-alert("Acá podrás comprar los juegos de tus consolas favoritas, Xbox y Play (Recuerda que nuestros precios son en dolares)");
+alert("Acá podrás comprar los juegos de tus consolas favoritas, Xbox, Play y Nintendo (Recuerda que nuestros precios son en dolares)");
 
 let cantidadJuegos = parseInt(prompt("Cuantos juegos quieres comprar? (Máximo 4)"));
 
@@ -16,7 +16,11 @@ while (isNaN(cantidadJuegos) || cantidadJuegos < 1 || cantidadJuegos > 4) {
 	cantidadJuegos = parseInt(prompt("Cuantos juegos quieres comprar? (Máximo 4)"));
 }
 
-let consola=prompt("Para que consola necesitas los juegos? (Escribe Xbox o Play)");
+let consola=prompt("Para que consola necesitas los juegos? (Escribe Xbox, Play o Nintendo)");
+
+while ((consola!="Xbox") && (consola!="Play") && (consola!="Nintendo") && (consola!="XBOX") && (consola!="PLAY") && (consola!="NINTENDO") && (consola!="xbox") && (consola!="play") && (consola!="nintendo")){
+	consola=prompt("Para que consola necesitas los juegos? (Escribe Xbox, Play o Nintendo)");
+}
 
 let compraJuegos=0;
 
@@ -48,8 +52,11 @@ function jugar(consola,cantidadJuegos){
 			alert("El precio es $" + juego);
 			compraJuegos += juego;
 			console.log("El precio total es $" + compraJuegos);
+			
 		}
 		alert("El precio final a pagar es $" + compraJuegos);
+		alert("Gracias por tu compra, te esperamos pronto");
+
 	} else if ((consola == "Play" || consola == "PLAY" || consola == "play")) {
 		for (i = 1; i <= cantidadJuegos; i++) {
 			juego = prompt(
@@ -77,12 +84,19 @@ function jugar(consola,cantidadJuegos){
 			alert("El precio es $" + juego);
 			compraJuegos += juego;
 			console.log("El precio total es $" + compraJuegos);
+			
 		}
 		alert("El precio final a pagar es $" + compraJuegos);
+		alert("Gracias por tu compra, te esperamos pronto");
 	} else if ((consola == "Nintendo" || consola == "NINTENDO" || consola == "nintendo")) {
-		alert("Aún no tenemos stock en nintendo");
+		alert("Aún no tenemos stock en nintendo"+"\nVuelve pronto");
 	} else{
 		alert("No ingresaste una consola valida");
+		alert("Gracias por ingresar a nuestra tienda");
 	}
 }
 jugar(consola,cantidadJuegos);
+
+
+
+
