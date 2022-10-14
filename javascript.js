@@ -128,5 +128,3 @@ function carroCompras(carrito) {
     );
   }
 }
-
-carroCompras(carrito);
