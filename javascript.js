@@ -63,7 +63,7 @@ while (isNaN(cantidadJuegos) || cantidadJuegos < 1 || cantidadJuegos > 4) {
   cantidadJuegos = parseInt(
     prompt(
       "Recuerda, ingresa una cantidad máxima de 4 juegos." +
-      "\nCuantos juegos quieres comprar?"
+        "\nCuantos juegos quieres comprar?"
     )
   );
 }
@@ -73,8 +73,8 @@ let consola = prompt(
 ).toLowerCase();
 
 while (consola != "xbox" && consola != "play" && consola != "nintendo") {
-  consola = prompt(
-    "Para que consola necesitas los juegos? (Escribe Xbox, Play o Nintendo)"
+  consola = prompt("Consola invalida"+
+    "\nPara que consola necesitas los juegos? (Escribe Xbox, Play o Nintendo)"
   );
 }
 
@@ -94,7 +94,20 @@ function filtrarJuegos(filtro) {
     alert("Aún no tenemos stock en esta marca.");
   } else {
     for (i = 1; i <= cantidadJuegos; i++) {
-      let preguntaId = parseInt(prompt("Ingresa el numero correspondiente al juego que deseas"));
+      let preguntaId = parseInt(
+        prompt("Ingresa el numero correspondiente al juego que deseas adquirir")
+      );
+      if (consola == "xbox"){
+        while (preguntaId != 1 && preguntaId != 2 && preguntaId != 3 && preguntaId != 4){
+          preguntaId = parseInt(
+            prompt("Ingresa el numero correspondiente al juego que deseas"+ "\nEste numero lo encuentras antes del nombre del juego, por ejemplo: 1 - Fifa"));
+        }
+      } else{
+        while (preguntaId != 1 && preguntaId != 5 && preguntaId != 6 && preguntaId != 7){
+          preguntaId = parseInt(
+            prompt("Ingresa el numero correspondiente al juego que deseas"+ "\nEste numero lo encuentras antes del nombre del juego, por ejemplo: 1 - Fifa"));
+        }
+      }
       const busquedaId = filtro.find((idJuego) => idJuego.id == preguntaId);
       carrito.push({ name: busquedaId.name, price: busquedaId.price });
     }
@@ -109,11 +122,11 @@ function carroCompras(carrito) {
     for (const juegosParaComprar of carrito) {
       console.log(
         "El juego seleccionado es " +
-        juegosParaComprar.name +
-        ", su valor es de $" +
-        juegosParaComprar.price +
-        " para " +
-        consola
+          juegosParaComprar.name +
+          ", su valor es de $" +
+          juegosParaComprar.price +
+          " para " +
+          consola
       );
     }
     const compraTotal = carrito.reduce(
@@ -122,9 +135,9 @@ function carroCompras(carrito) {
     );
     console.log(
       "La cantidad de juegos que vas a comprar es de " +
-      cantidadJuegos +
-      " y el valor a pagar es de $" +
-      compraTotal
+        cantidadJuegos +
+        " y el valor a pagar es de $" +
+        compraTotal
     );
   }
 }
