@@ -72,7 +72,7 @@ let consola = prompt(
   "Para que consola necesitas los juegos? (Escribe Xbox, Play o Nintendo)"
 ).toLowerCase();
 
-while (consola != "xbox" && consola != "play" && consola != "nintendo") {
+while (consola !== "xbox" && consola !== "play" && consola !== "nintendo") {
   consola = prompt("Consola invalida"+
     "\nPara que consola necesitas los juegos? (Escribe Xbox, Play o Nintendo)"
   );
@@ -90,25 +90,25 @@ filtroJuegos.forEach((game) => {
 
 let carrito = [];
 function filtrarJuegos(filtro) {
-  if (consola == "nintendo") {
+  if (consola === "nintendo") {
     alert("Aún no tenemos stock en esta marca.");
   } else {
     for (i = 1; i <= cantidadJuegos; i++) {
       let preguntaId = parseInt(
         prompt("Ingresa el numero correspondiente al juego que deseas adquirir")
       );
-      if (consola == "xbox"){
-        while (preguntaId != 1 && preguntaId != 2 && preguntaId != 3 && preguntaId != 4){
+      if (consola === "xbox"){
+        while (preguntaId !== 1 && preguntaId !== 2 && preguntaId !== 3 && preguntaId !== 4){
           preguntaId = parseInt(
             prompt("Ingresa el numero correspondiente al juego que deseas"+ "\nEste numero lo encuentras antes del nombre del juego, por ejemplo: 1 - Fifa"));
         }
       } else{
-        while (preguntaId != 1 && preguntaId != 5 && preguntaId != 6 && preguntaId != 7){
+        while (preguntaId !== 1 && preguntaId !== 5 && preguntaId !== 6 && preguntaId !== 7){
           preguntaId = parseInt(
             prompt("Ingresa el numero correspondiente al juego que deseas"+ "\nEste numero lo encuentras antes del nombre del juego, por ejemplo: 1 - Fifa"));
         }
       }
-      const busquedaId = filtro.find((idJuego) => idJuego.id == preguntaId);
+      const busquedaId = filtro.find((idJuego) => idJuego.id === preguntaId);
       carrito.push({ name: busquedaId.name, price: busquedaId.price });
     }
   }
@@ -116,7 +116,7 @@ function filtrarJuegos(filtro) {
 filtrarJuegos(filtro);
 
 function carroCompras(carrito) {
-  if (consola == "nintendo") {
+  if (consola === "nintendo") {
     alert("Vuelve mas tarde");
   } else {
     for (const juegosParaComprar of carrito) {
