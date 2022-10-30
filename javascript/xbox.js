@@ -1,4 +1,4 @@
-const juegos = [
+const juegosXbox = [
     {
       name: "Fifa",
       price: 59.99,
@@ -33,21 +33,38 @@ const juegos = [
     },
 ];
 
+const carrito = [];
+
 let contenedor = document.getElementById("productos__xbox");
 
 function renderizarProds(){
-    for (const juego of juegos){
+    for (const juego of juegosXbox){
         contenedor.innerHTML += `
-        <div class="card col-sm-3">
+        <div class="card col-sm 4">
             <img src=${juego.photo} class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${juego.name}</h5>
                 <h5 class="card-title">$${juego.price}</h5>
-                <button class="btn btn-primary">Añadir al carrito</button>
+                <button class="btn btn-primary" id="btn${juego.id}">Añadir al carrito</button>
             </div>
         </div>
         `;
     }
+
+    //Eventos
+    juegosXbox.forEach(juego => {
+      document.getElementById(`btn${juego.id}`).addEventListener("click",function(){
+          agregarAlCarrito(juego);
+      });
+    })
 }
 
 renderizarProds();
+
+
+function agregarAlCarrito(juegoComprado){
+  carrito.push(juegoComprado);
+  console.table(carrito);
+  alert("El juego "+juegoComprado.name+" ha sido agregado al carrito");
+
+}

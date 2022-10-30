@@ -4,6 +4,7 @@
 /* Nav */
 /* Color texto */
 /* Tamaño imagenes index */
+/* Tamaño cards archivos JS */
 /* Variables */
 * {
   padding: 0px;
@@ -58,6 +59,17 @@ header p {
   color: black;
   text-align: justify;
   margin-bottom: 0;
+}
+
+/* Texto y boton carrito */
+.carrito {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carrito .bi-cart {
+  color: black;
+  float: right;
 }
 
 /* Imagenes */
@@ -115,4 +127,17 @@ footer a, footer p {
 
 .form-group, .form-control {
   margin: 2%;
+}
+
+.article__index {
+  justify-content: center;
+}
+.article__index .card {
+  width: 60%;
+  margin: 1%;
+  align-content: center;
+}
+.article__index .card img {
+  border-radius: 3%;
+  margin-top: 1%;
 }/*# sourceMappingURL=style.css.map */
