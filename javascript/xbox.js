@@ -126,7 +126,7 @@ function renderizarProds(){
 renderizarProds();
 
 
-function agregarAlCarrito(juegoComprado){
+function agregarAlCarrito(juegoComprado){ 
   carritoXbox.push(juegoComprado);
   console.table(carritoXbox);
   alert("El juego "+juegoComprado.name+" ha sido agregado al carrito");
