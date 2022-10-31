@@ -140,4 +140,8 @@ footer a, footer p {
 .article__index .card img {
   border-radius: 3%;
   margin-top: 1%;
+}
+
+.filtro {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
