@@ -1,18 +1,14 @@
 let arrayXbox = JSON.parse(localStorage.getItem("carritoXbox"));
-/* let arrayPlay = JSON.parse(localStorage.getItem("carritoPlay")); */
-
-/* const arrayCompras = arrayXbox.concat(arrayPlay); */
 
 let juegosCompradosFinal;
 
 function actualizarCarrito(){
     for (juegosCompradosFinal of arrayXbox){
-        document.getElementById("tablajuegos").innerHTML += `
+        document.getElementById("tablajuegos")  .innerHTML += `
         <tr>
             <td>${juegosCompradosFinal.name}</td>
-            <td>${juegosCompradosFinal.platforms}</td>
+            <td>${juegosCompradosFinal.genre}</td>
             <td>${juegosCompradosFinal.price}</td>
-            <td><button class="btn btn-primary" id="eliminar__item${juegosCompradosFinal.id}"><i class="bi bi-x-circle-fill"></i></button></td>
         </tr>`;
     
     }
@@ -41,5 +37,19 @@ btnVaciar.addEventListener("click",() =>{
     })
 
 
+const btn2 = document.getElementById("vaciar-carrito").addEventListener("click",function(){
+    finalizarCompra(arrayXbox);
+})
+    
+
+
+function finalizarCompra(arrayXbox){
+    if(array.length !=0){
+        alert("Gracias por tu compra")
+       }
+       else{
+          alert("Recuerda agregar productos")
+       }
+}
 
 

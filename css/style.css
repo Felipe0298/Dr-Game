@@ -64,11 +64,12 @@ header p {
 /* Texto y boton carrito */
 .carrito {
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
 }
 .carrito .bi-cart {
   color: black;
+  font-size: 2rem;
   float: right;
 }
 
@@ -98,6 +99,11 @@ footer a, footer p {
 }
 
 /* Xbox */
+/* Filtro por busqueda del nombre */
+.filtro {
+  display: none;
+}
+
 /* Play */
 /* Nosotros */
 .h1__nosotros {
@@ -142,6 +148,10 @@ footer a, footer p {
   margin-top: 1%;
 }
 
-.filtro {
-  display: none;
+/* Carrito */
+.tabla-checkout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 2% 0% 1% 0%;
 }/*# sourceMappingURL=style.css.map */
