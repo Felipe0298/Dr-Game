@@ -2,7 +2,7 @@ const juegosXbox = [
     {
       name: "Fifa 23",
       price: 59.99,
-      genre: ["deportes", "estrategia"],
+      genre: ["Deportes", "Estrategia"],
       platforms: "Xbox",
       photo: "../imgs/fifa.jpg",
       id: 1,
@@ -10,7 +10,7 @@ const juegosXbox = [
     {
       name: "Halo Infinite",
       price: 49.99,
-      genre: ["accion", "disparos"],
+      genre: ["Accion", "Disparos"],
       platforms: "Xbox",
       photo: "../imgs/xbox/halo.jpg",
       id: 2,
@@ -18,7 +18,7 @@ const juegosXbox = [
     {
       name: "Gears 5",
       price: 29.99,
-      genre: ["accion", "disparos"],
+      genre: ["Accion", "Disparos"],
       platforms: "Xbox",
       photo: "../imgs/xbox/gears.jpg",
       id: 3,
@@ -26,7 +26,7 @@ const juegosXbox = [
     {
       name: "Forza Horizon 4",
       price: 14.99,
-      genre: "carreras",
+      genre: "Carreras",
       platforms: "Xbox",
       photo: "../imgs/xbox/forza.jpg",
       id: 4,
@@ -34,7 +34,7 @@ const juegosXbox = [
     {
       name: "Gears of War: Ultimate Edition",
       price: 17.99,
-      genre: ["accion", "disparos"],
+      genre: ["Accion", "Disparos"],
       platforms: "Xbox",
       photo: "../imgs/xbox/gearsUE.jpg",
       id: 5,
@@ -42,7 +42,7 @@ const juegosXbox = [
     {
       name: "Need for Speed Unbound",
       price: 47.99,
-      genre: "carreras",
+      genre: "Carreras",
       platforms: "Xbox",
       photo: "../imgs/juegos-Compartidos/nfs-unbound.png",
       id: 6,
@@ -50,7 +50,7 @@ const juegosXbox = [
     {
       name: "Forza Horizon 5",
       price: 47.99,
-      genre: "carreras",
+      genre: "Carreras",
       platforms: "Xbox",
       photo: "../imgs/xbox/forza5.jpg",
       id: 7,
@@ -58,7 +58,7 @@ const juegosXbox = [
     {
       name: "Gears of War 4",
       price: 7.99,
-      genre: ["accion", "disparos"],
+      genre: ["Accion", "Disparos"],
       platforms: "Xbox",
       photo: "../imgs/xbox/gears4.jpg",
       id: 8,
@@ -66,7 +66,7 @@ const juegosXbox = [
     {
       name: "Halo 5",
       price: 16.99,
-      genre: ["accion", "disparos"],
+      genre: ["Accion", "Disparos"],
       platforms: "Xbox",
       photo: "../imgs/xbox/halo5.jpg",
       id: 9,
@@ -74,7 +74,7 @@ const juegosXbox = [
     {
       name: "Halo: The Master Chief Collection",
       price: 47.99,
-      genre: ["accion", "disparos"],
+      genre: ["Accion", "Disparos"],
       platforms: "Xbox",
       photo: "../imgs/xbox/halo-MCC.jpg",
       id: 10,
