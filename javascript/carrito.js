@@ -12,7 +12,7 @@ function actualizarCarrito(){
             <td>${juegosCompradosFinal.name}</td>
             <td>${juegosCompradosFinal.platforms}</td>
             <td>${juegosCompradosFinal.price}</td>
-            <td><button class="btn btn-primary" id="btn eliminar__item${juegosCompradosFinal.id}"><i class="bi bi-x-circle-fill"></i></button></td>
+            <td><button class="btn btn-primary" id="eliminar__item${juegosCompradosFinal.id}"><i class="bi bi-x-circle-fill"></i></button></td>
         </tr>`;
     
     }
@@ -29,10 +29,10 @@ compraTotalFinal.innerHTML = "Total a pagar $: "+compraTotal;
 const btnVaciar = document.getElementById("vaciar-carrito");
     
 btnVaciar.addEventListener("click",() =>{
+    arrayXbox = [];
         juegosCompradosFinal = [];
         localStorage.clear();
-        /* actualizarCarrito(); */
-
+        
         document.getElementById("tablajuegos").innerHTML = "";
         compraTotal=0;
         document.getElementById("total");
@@ -40,28 +40,6 @@ btnVaciar.addEventListener("click",() =>{
         
     })
 
-/* document.getElementById("eliminar__item6").addEventListener("click",console.log("click")
-); */
 
-/* function eliminarJuego ()  {
-    const index = arrayXbox.findIndex(object => {
-        return object.id ===arrayXbox.name;
-    });
-
-    juegosCompradosFinal.forEach(juegoAEliminar => {
-        document.getElementById(`eliminar__item${juegosCompradosFinal.id}`).addEventListener("click",function(){
-            removerItem(juegoAEliminar);
-        })
-    });
-
-    console.log(index);
-    
-}
-
-eliminarJuego();
-
-function removerItem (){
-
-} */
 
 
