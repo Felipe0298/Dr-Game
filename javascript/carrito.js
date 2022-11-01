@@ -16,12 +16,14 @@ function actualizarCarrito(){
 
 actualizarCarrito();
 
-
+/* Suna de los precios */
 let compraTotal = arrayXbox.reduce((acumulador,juegoComprado) => acumulador + juegoComprado.price,0);
 
 let compraTotalFinal = document.getElementById("total");
 compraTotalFinal.innerHTML = "Total a pagar $: "+compraTotal;
 
+/* Para vaciar todos los elementos del carrito
+ */
 const btnVaciar = document.getElementById("vaciar-carrito");
     
 btnVaciar.addEventListener("click",() =>{
@@ -37,14 +39,13 @@ btnVaciar.addEventListener("click",() =>{
     })
 
 
-const btn2 = document.getElementById("vaciar-carrito").addEventListener("click",function(){
+    /* Boton de comprar */
+const btn2 = document.getElementById("completar-compra").addEventListener("click",function(){
     finalizarCompra(arrayXbox);
 })
     
-
-
 function finalizarCompra(arrayXbox){
-    if(array.length !=0){
+    if(arrayXbox.length !=0){
         alert("Gracias por tu compra")
        }
        else{
