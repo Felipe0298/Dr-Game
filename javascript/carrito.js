@@ -26,15 +26,36 @@ compraTotalFinal.innerHTML = "Total a pagar $: "+compraTotal;
  */
 const btnVaciar = document.getElementById("vaciar-carrito");
     
+
+
 btnVaciar.addEventListener("click",() =>{
-    arrayXbox = [];
-        juegosCompradosFinal = [];
-        localStorage.clear();
+
+    Swal.fire({
+        title: 'Deseas eliminar todos los productos del carrito?',
+        text: "Tendras que agregarlos de nuevo",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, borralos!',
+        cancelButtonText: 'Cancelar',
+      }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire(
+                'Eliminados!',
+                'Los productos han sido eliminados.',
+                'success'
+              )
+        arrayXbox = [],
+        juegosCompradosFinal = [],
+        localStorage.clear(),
         
-        document.getElementById("tablajuegos").innerHTML = "";
-        compraTotal=0;
-        document.getElementById("total");
-        compraTotalFinal.innerHTML = "Total a pagar $: "+compraTotal;
+        document.getElementById("tablajuegos").innerHTML = "",
+        compraTotal=0,
+        document.getElementById("total"),
+        compraTotalFinal.innerHTML = "Total a pagar $: "+compraTotal
+        }
+      })
         
     })
 
@@ -46,11 +67,29 @@ const btn2 = document.getElementById("completar-compra").addEventListener("click
     
 function finalizarCompra(arrayXbox){
     if(arrayXbox.length !=0){
-        alert("Gracias por tu compra")
+         
+            Toastify({  
+                text: "Gracias por tu compra",
+                duration: 1500,
+                style: {
+                    background: "rgb(134,144,150)",
+                    background: "linear-gradient(90deg, rgba(134,144,150,1) 33%, rgba(231,69,252,1) 80%)",
+                    color: "blue",
+                    "font-weight": "bolder", 
+                }
+            }).showToast();
+        
        }
        else{
-          alert("Recuerda agregar productos")
+        Toastify({  
+            text: "Recuerda agregar productos",
+            duration: 1500,
+            style: {
+                background: "rgb(68,4,4)",
+                /* background: "linear-gradient(90deg, rgba(134,144,150,1) 33%, rgba(231,69,252,1) 80%)", */
+                color: "white",
+                "font-weight": "bolder", 
+            }
+        }).showToast();
        }
 }
-
-

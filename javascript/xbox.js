@@ -129,7 +129,24 @@ renderizarProds();
 function agregarAlCarrito(juegoComprado){ 
   carritoXbox.push(juegoComprado);
   console.table(carritoXbox);
-  alert("El juego "+juegoComprado.name+" ha sido agregado al carrito");
+  /* alert("El juego "+juegoComprado.name+" ha sido agregado al carrito"); */
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-start',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+  
+  Toast.fire({
+    icon: 'success',
+    title: juegoComprado.name+" ha sido añadido al carrito",
+  })
 
   localStorage.setItem("carritoXbox",JSON.stringify(carritoXbox));
 
