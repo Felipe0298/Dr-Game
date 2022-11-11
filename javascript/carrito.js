@@ -1,37 +1,38 @@
 //Traer el array de los otros archivos js
-let arrayXboxs = JSON.parse(localStorage.getItem("carritoXbox")) || [];
+let arrayXbox = JSON.parse(localStorage.getItem("carritoXbox")) || [];
 let arrayPlay = JSON.parse(localStorage.getItem("carritoPlay")) || [];
 
 //Juntando la info
 
-let arrayXbox = arrayXboxs.concat(arrayPlay);
+let arrayFinalJuegos = arrayXbox.concat(arrayPlay);
+let precioActual;
 
 //Verificando si hay info de antes
 
-(arrayXbox.length != 0)&&mostrarJuegos();
+(arrayFinalJuegos.length != 0)&&mostrarJuegos();
 
-obtenerUSD();
-
-// Dibijar los productos agregados al carrito
+// Dibujar los productos agregados al carrito
 
 function mostrarJuegos(){
-    for(const juego of arrayXbox){
+
+    for(const juego of arrayFinalJuegos){
         document.getElementById("tablajuegos").innerHTML += `
         <tr>
                 <td><img class="img__carrito" src="${juego.photo}"></td>
                 <td class="td__carrito">${juego.name}</td>
                 <td class="td__carrito">${juego.platforms}</td>
-                <td class="td__carrito">${juego.price}</td>
+                <td class="td__carrito"> $${juego.price}</td>
                 <td><button class="btn" onclick="eliminar(event)">X</button></td>
             </tr>
         `
     }
 
-    compraTotal = arrayXbox.reduce((acumulador,juego) => acumulador+juego.price,0);
+    compraTotal = arrayFinalJuegos.reduce((acumulador,juego) => acumulador+juego.price,0);
+
 
     let compraTotalFinal = document.getElementById("total");
 
-    compraTotalFinal.innerText = "Total a pagar en USD $: "+compraTotal;
+    compraTotalFinal.innerText = "Total a pagar en USD $: "+compraTotal.toFixed(2);
     
 }
 
@@ -43,39 +44,27 @@ function eliminar(ev){
     let nombre = fila.children[1].innerText;
 
     //Buscando la info para hacer el match
-    let indice = arrayXbox.findIndex(producto => producto.name == nombre)
+    let indice = arrayFinalJuegos.findIndex(producto => producto.name == nombre)
 
     //Eliminar juego del array
-    arrayXbox.splice(indice,1);
+    arrayFinalJuegos.splice(indice,1);
 
     //Eliminar de la fila en la tabla
     fila.remove();
 
     //Recalculando el nuevo total
-    nuevoTotal = arrayXbox.reduce((acumulador,juego) => acumulador+juego.price,0);
+    nuevoTotal = arrayFinalJuegos.reduce((acumulador,juego) => acumulador+juego.price,0);
 
     let nuevaCompraTotal= document.getElementById("total");
 
-    nuevaCompraTotal.innerText = "Total a pagar en USD $: "+ nuevoTotal;
+    nuevaCompraTotal.innerText = "Total a pagar en USD $: "+ nuevoTotal.toFixed(2);
 
-}
-
-//Obtener valor USD
-function obtenerUSD(){
-    const urlDolar ="https://api.bluelytics.com.ar/v2/latest";
-    fetch(urlDolar)
-        .then (respuesta => respuesta.json())
-        .then( cotizaciones => {
-            const dolarBlue = cotizaciones.blue;
-            
-            document.getElementById("total-blue").innerHTML += `Compra dolar: $ ${dolarBlue.value_buy} Venta dolar: $ ${dolarBlue.value_sell} `
-        })
 }
 
 //Eliminar todos los items del carrito
 
 function vaciarCarrito(){
-    if(arrayXbox.length == 0){
+    if(arrayFinalJuegos.length == 0){
         Toastify({  
             text: "No hay productos por eliminar",
             duration: 1500,
@@ -102,13 +91,13 @@ function vaciarCarrito(){
                     'Los productos han sido eliminados.',
                     'success'
                   )
-            arrayXbox = [],
+            arrayFinalJuegos = [],
             localStorage.clear(),
             
             document.getElementById("tablajuegos").innerHTML = "",
             compraTotal=0;
             let compraTotalFinal = document.getElementById("total");
-            compraTotalFinal.innerHTML = "Total a pagar $: "+compraTotal
+            compraTotalFinal.innerHTML = "Total a pagar $: "+compraTotal.toFixed(2)
             }
           })
     }
@@ -117,8 +106,8 @@ function vaciarCarrito(){
 //Boton comprar
 
 let btnComprar = document.getElementById("completar-compra").addEventListener("click", function(){
-    if(arrayXbox.length !=0){
-        arrayXbox = [],
+    if(arrayFinalJuegos.length !=0){
+        arrayFinalJuegos = [],
         localStorage.clear(),
         document.getElementById("tablajuegos").innerHTML = "",
         compraTotal=0,

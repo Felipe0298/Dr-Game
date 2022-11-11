@@ -1,102 +1,6 @@
-const juegosXbox = [
-    {
-      name: "Fifa 23",
-      price: 59.99,
-      genre: ["Deportes", "Estrategia"],
-      platforms: "Xbox",
-      photo: "../imgs/fifa.jpg",
-      id: 1,
-    },
-    {
-      name: "Halo Infinite",
-      price: 49.99,
-      genre: ["Accion", "Disparos"],
-      platforms: "Xbox",
-      photo: "../imgs/xbox/halo.jpg",
-      id: 2,
-    },
-    {
-      name: "Gears 5",
-      price: 29.99,
-      genre: ["Accion", "Disparos"],
-      platforms: "Xbox",
-      photo: "../imgs/xbox/gears.jpg",
-      id: 3,
-    },
-    {
-      name: "Forza Horizon 4",
-      price: 14.99,
-      genre: "Carreras",
-      platforms: "Xbox",
-      photo: "../imgs/xbox/forza.jpg",
-      id: 4,
-    },
-    {
-      name: "Gears of War: Ultimate Edition",
-      price: 17.99,
-      genre: ["Accion", "Disparos"],
-      platforms: "Xbox",
-      photo: "../imgs/xbox/gearsUE.jpg",
-      id: 5,
-    },
-    {
-      name: "Need for Speed Unbound",
-      price: 47.99,
-      genre: "Carreras",
-      platforms: "Xbox",
-      photo: "../imgs/juegos-Compartidos/nfs-unbound.png",
-      id: 6,
-    },
-    {
-      name: "Forza Horizon 5",
-      price: 47.99,
-      genre: "Carreras",
-      platforms: "Xbox",
-      photo: "../imgs/xbox/forza5.jpg",
-      id: 7,
-    },
-    {
-      name: "Gears of War 4",
-      price: 7.99,
-      genre: ["Accion", "Disparos"],
-      platforms: "Xbox",
-      photo: "../imgs/xbox/gears4.jpg",
-      id: 8,
-    },
-    {
-      name: "Halo 5",
-      price: 16.99,
-      genre: ["Accion", "Disparos"],
-      platforms: "Xbox",
-      photo: "../imgs/xbox/halo5.jpg",
-      id: 9,
-    },
-    {
-      name: "Halo: The Master Chief Collection",
-      price: 47.99,
-      genre: ["Accion", "Disparos"],
-      platforms: "Xbox",
-      photo: "../imgs/xbox/halo-MCC.jpg",
-      id: 10,
-    },
-    {
-      name: "Assassin's Creed Valhalla",
-      price: 34.99,
-      genre: "Aventura",
-      platforms: "Xbox",
-      photo: "../imgs/juegos-Compartidos/assasins-valhalla.jpg",
-      id: 11,
-    },
-    {
-      name: "Assassin's Creed Odyssey",
-      price: 24.99,
-      genre: "Aventura",
-      platforms: "Xbox",
-      photo: "../imgs/juegos-Compartidos/assasins-odessy.png",
-      id: 12,
-    },
-];
-
+let juegosXbox = [];
+let precioActual;
+obtenerDolar()
 const carritoXbox = [];
 
 let contenedor = document.getElementById("productos__xbox");
@@ -108,7 +12,7 @@ function renderizarProds(){
             <img src=${juego.photo} class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${juego.name}</h5>
-                <h5 class="card-title">$${juego.price}</h5>
+                <h5 class="card-title">Cop:$${(juego.price*precioActual).toFixed(2)}<br>USD:$${juego.price}</h5>
                 <button class="btn btn-primary" id="btn${juego.id}">Añadir al carrito</button>
             </div>
         </div>
@@ -167,3 +71,25 @@ document.addEventListener("keyup", e => {
   
   
 })
+
+
+function obtenerDolar(){
+  const urlDolar = "http://www.floatrates.com/daily/cop.json";
+  fetch(urlDolar)
+      .then( respuesta => respuesta.json())
+      .then( cotizaciones => {
+          const precioDolar = cotizaciones.usd;
+          precioActual = precioDolar.inverseRate;
+          console.log(precioActual);
+          obtenerJSON()
+      })
+}
+
+async function obtenerJSON(){
+  const JUEGOSXBOX ="../json/xbox.json";
+  const resp = await fetch(JUEGOSXBOX);
+  const data = await resp.json();
+  juegosXbox = data;
+  //Tengo USD, items, sigue renderizar las cards llamando a la funcion
+  renderizarProds()
+}
