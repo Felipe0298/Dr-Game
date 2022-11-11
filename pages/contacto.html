@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="shortcut icon" href="../imgs/icon/icono.ico.ico">
     <link rel="stylesheet" href="../css/style.css">
     <title>Contacto | Dr Game</title>
@@ -65,9 +66,9 @@
                     <ul class="navbar-nav">
                         <a class="nav-link" href="./xbox.html">Xbox</a>
                         </li>
-                        <!-- <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link" href="./play.html">Play</a>
-                        </li> -->
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./nosotros.html">Nosotros</a>
                         </li>
@@ -95,20 +96,20 @@
                     <div class="form-group">
                         <div class="form-row">
                             <div class="col">
-                                <input type="text" name="name" class="form-control" placeholder="Nombre Completo"
+                                <input id="nombre-contacto" type="text" name="name" class="form-control" placeholder="Nombre Completo"
                                     required>
                             </div>
                             <div class="col">
-                                <input type="email" name="email" class="form-control" placeholder="Correo electrónico"
+                                <input id="email-contacto" type="email" name="email" class="form-control" placeholder="Correo electrónico"
                                     required>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Escribe tu mensaje" class="form-control" name="message" rows="10"
+                        <textarea id="placeholder-contacto" placeholder="Escribe tu mensaje" class="form-control" name="message" rows="10"
                             required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-lg btn-dark btn-block">Enviar</button>
+                    <button type="submit" class="btn btn-lg btn-dark btn-block btn-enviar" id="btn-sumbit">Enviar</button>
                 </form>
             </div>
         </article>
@@ -131,7 +132,7 @@
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
         crossorigin="anonymous"></script>
 
-    <script src="./javascript.js"></script>
+
 
 </body>
 

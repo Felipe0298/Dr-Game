@@ -86,8 +86,8 @@ header p{
     color: black;
     font-size: 2*$tamano_fuente;
     float: right;
-    
-
+    position: absolute;
+    right: 1%;
   }
 }
 
@@ -154,7 +154,7 @@ footer{
   width: 70%;
 }
 
-.form-group,.form-control{
+.form-group,.form-control,.btn-enviar{
   margin: 2%;
 }
   
@@ -174,11 +174,12 @@ footer{
 }
 
 /* Carrito */
+.tabla__checkout{
+  font-size: larger;
+  font-weight: bold;
+}
 
-.tabla-checkout{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin: 2% 0% 1% 0%;
-} 
-
+.img__carrito{
+  width: 40vw;
+  border-radius: 2%;
+}
