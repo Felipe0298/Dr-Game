@@ -52,7 +52,7 @@ function agregarAlCarrito(juegoComprado){
   })
 
   localStorage.setItem("carritoXbox",JSON.stringify(carritoXbox));
-
+  
 }
 
 
