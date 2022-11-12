@@ -86,7 +86,7 @@ function obtenerDolar(){
 }
 
 async function obtenerJSON(){
-  const JUEGOSXBOX ="../xbox.json";
+  const JUEGOSXBOX ="../json/xbox.json";
   const resp = await fetch(JUEGOSXBOX);
   const data = await resp.json();
   juegosXbox = data;
