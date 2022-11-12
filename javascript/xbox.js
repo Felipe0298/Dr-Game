@@ -93,3 +93,4 @@ async function obtenerJSON(){
   //Tengo USD, items, sigue renderizar las cards llamando a la funcion
   renderizarProds()
 }
+

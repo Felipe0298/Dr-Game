@@ -59,6 +59,21 @@ function eliminar(ev){
 
     nuevaCompraTotal.innerText = "Total a pagar en USD $: "+ nuevoTotal.toFixed(2);
 
+    //Eliminando del LocalStorage
+    
+    let equipo = fila.children[2].innerText; //Identifico la consola
+    
+    if (equipo == "Xbox"){
+        //Identifico la posicion del juego en el array
+        let juegoXbox = arrayXbox.findIndex(itemXbox => itemXbox.name == nombre);
+        arrayXbox.splice(juegoXbox,1); //Lo elimino del array
+        localStorage.setItem("carritoXbox",JSON.stringify(arrayXbox)); //Actualizo el LS
+    } else{
+        let juegoPlay = arrayPlay.findIndex(itemPlay => itemPlay.name == nombre);
+        arrayPlay.splice(juegoPlay,1);
+        localStorage.setItem("carritoPlay",JSON.stringify(arrayPlay));
+    }
+
 }
 
 //Eliminar todos los items del carrito
