@@ -52,7 +52,7 @@ function agregarAlCarrito(juegoComprado){
   })
 
   localStorage.setItem("carritoXbox",JSON.stringify(carritoXbox));
-  
+
 }
 
 
@@ -93,4 +93,3 @@ async function obtenerJSON(){
   //Tengo USD, items, sigue renderizar las cards llamando a la funcion
   renderizarProds()
 }
-
