@@ -8,7 +8,7 @@ let contenedor = document.getElementById("productos__xbox");
 function renderizarProds(){
     for (const juego of juegosXbox){
         contenedor.innerHTML += `
-        <div class="card col-sm-3" id ="juego_Xbox">
+        <div class="card col-sm-12" id ="juego_Xbox">
             <img src=${juego.photo} class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${juego.name}</h5>

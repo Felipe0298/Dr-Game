@@ -5,6 +5,8 @@
 /* Color texto */
 /* Tamaño imagenes index */
 /* Tamaño cards archivos JS */
+/* Margin */
+/* Tamaño imagenes en carrito */
 /* Variables */
 * {
   padding: 0px;
@@ -54,6 +56,37 @@ header h1 {
   margin-top: 2%;
 }
 
+.h1__index {
+  display: block;
+  white-space: nowrap;
+  border-right: 4px solid;
+  width: 8ch;
+  -webkit-animation: typing 2s steps(8), blink 0.5s infinite step-end alternate;
+          animation: typing 2s steps(8), blink 0.5s infinite step-end alternate;
+  overflow: hidden;
+}
+
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+@-webkit-keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
 header p {
   font-size: 1.2rem;
   color: black;
@@ -80,8 +113,27 @@ header p {
   width: 70%;
   margin: 4%;
   border-radius: 3%;
+  -webkit-animation: aparece 1s;
+          animation: aparece 1s;
 }
 
+@-webkit-keyframes aparece {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes aparece {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
 /* Footer */
 .footer__index-p {
   color: white;
@@ -100,13 +152,25 @@ footer a, footer p {
   padding-top: 2%;
 }
 
-/* Xbox */
+/* Xbox y Play */
+.div__container-xbox, .div__container-play {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.div__container-xbox .article__index-xbox, .div__container-xbox .article__index-play, .div__container-play .article__index-xbox, .div__container-play .article__index-play {
+  width: 60%;
+  margin: 3%;
+}
+.div__container-xbox .card, .div__container-play .card {
+  margin: 1.5%;
+}
+
 /* Filtro por busqueda del nombre */
 .filtro {
   display: none;
 }
 
-/* Play */
 /* Nosotros */
 .h1__nosotros {
   margin-bottom: 0;
@@ -140,14 +204,11 @@ footer a, footer p {
 .article__index {
   justify-content: center;
 }
-.article__index .card {
-  width: 60%;
-  margin: 1%;
+.article__index .img__xbox, .article__index .img__play {
+  width: 70%;
+  margin: 3%;
   align-content: center;
-}
-.article__index .card img {
   border-radius: 3%;
-  margin-top: 1%;
 }
 
 /* Carrito */
@@ -158,5 +219,38 @@ footer a, footer p {
 
 .img__carrito {
   width: 40vw;
-  border-radius: 2%;
+  border-radius: 3%;
+}
+
+/* Pagina con tamaño minimo de 768px */
+@media screen and (min-width: 768px) {
+  header div img {
+    width: 100%;
+    height: 46.75vh;
+  }
+  header h1 {
+    font-size: 2.5rem;
+  }
+  header p {
+    font-size: 1.4rem;
+  }
+  .carrito .bi-cart {
+    color: black;
+    font-size: 3rem;
+    float: right;
+    position: absolute;
+    right: 1%;
+  }
+  .div__container-xbox, .div__container-play {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .div__container-xbox .article__index-xbox, .div__container-xbox .article__index-play, .div__container-play .article__index-xbox, .div__container-play .article__index-play {
+    width: 60%;
+    margin: 3%;
+  }
+  .div__container-xbox .card, .div__container-play .card {
+    margin: 1.5%;
+  }
 }/*# sourceMappingURL=style.css.map */

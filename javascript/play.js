@@ -8,7 +8,7 @@ let contenedor2 = document.getElementById("productos__play");
 function renderizarProds2() {
   for (const juego2 of juegosPlay){
     contenedor2.innerHTML += `
-    <div class="card col-sm-3" id ="juego_Play">
+    <div class="card col-sm-12" id ="juego_Play">
         <img src=${juego2.photo} class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">${juego2.name}</h5>

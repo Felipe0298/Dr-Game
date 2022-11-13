@@ -68,6 +68,23 @@ header h1{
 
 }
 
+.h1__index{
+  display: block;
+  white-space: nowrap;
+  border-right: 4px solid;
+  width: 8ch;
+  animation: typing 2s steps(8),
+  blink .5s infinite step-end alternate;
+  overflow: hidden;
+}
+@keyframes typing{
+  from{width: 0;}
+}
+
+@keyframes blink{
+  50%{border-color: transparent}
+}
+
 header p{
     font-size: 1.2*$tamano_fuente;
     color: $color_texto;
@@ -100,6 +117,17 @@ header p{
   margin: $margin;
   border-radius: $border-radius;
 
+  animation: aparece 1s;
+}
+
+@keyframes aparece{
+  from{
+    transform:scale(0);
+  }
+  to{
+    transform:scale(1);
+
+  }
 }
 /* Footer */
 
@@ -122,12 +150,28 @@ footer{
   }
 }
 
-/* Xbox */
+/* Xbox y Play */
+
+.div__container-xbox,.div__container-play{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .article__index-xbox,.article__index-play{
+    width: $widht_js;
+    margin: $margin_cards;
+  }
+
+  .card{
+    margin: $margin_cards*0.5;
+  }
+}
+
+
 /* Filtro por busqueda del nombre */
 .filtro{
   display: none; 
 }
-/* Play */
 
 /* Nosotros */
 .h1__nosotros{
@@ -160,16 +204,11 @@ footer{
   
 .article__index{
   justify-content: center;
-  .card{
-    width: $widht_js;
-    margin: 1%;
+  .img__xbox,.img__play{
+    width: $width_index-imgs;
+    margin: 3%;
     align-content: center;
-    
-    img{
-      border-radius: 3%;
-      margin-top: 1%;
-    }
-  
+    border-radius: 3%;
   }
 }
 
@@ -180,6 +219,8 @@ footer{
 }
 
 .img__carrito{
-  width: 40vw;
-  border-radius: 2%;
+  width: $width_carrito;
+  border-radius: $border-radius;
 }
+
+@import "mediaQueries"
